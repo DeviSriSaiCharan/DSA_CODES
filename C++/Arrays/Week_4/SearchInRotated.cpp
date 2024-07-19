@@ -12,8 +12,8 @@ int PivotElement(vector<int> arr){
 
         if(left == right) return left;
         
-        if(arr[mid] > arr[mid+1]) return mid;
-        else if(arr[mid] < arr[mid-1]) return mid-1;
+        if(mid+1 < n && arr[mid] > arr[mid+1]) return mid;
+        else if(mid-1 >= 0 && arr[mid] < arr[mid-1]) return mid-1;
         else if(arr[mid] < arr[left]) right = mid-1;
         else left = mid + 1;        
     }
@@ -43,8 +43,8 @@ int SearchRotated(vector<int> arr, int target){
 
 int main(){
 
-    vector<int> arr = {12,14,16,2,4,6,8,10};
-    int target = 10;
+    vector<int> arr = {1,3};
+    int target = 0;
 
     cout<<SearchRotated(arr, target);
 
